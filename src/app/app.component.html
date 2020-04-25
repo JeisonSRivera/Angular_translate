@@ -1,0 +1,20 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+    <h1>
+        {{ 'Welcome to' | translate }} {{ title }}!
+    </h1>
+    <div>{{ 'HELLO' | translate }}</div>
+    <div [innerHTML]="'GREETING' | translate:{name: 'Jeison'}"></div>
+    <label>
+        {{ 'Language' | translate }}
+      <select #langSelect (change)="changeLang(langSelect.value)">
+        <option *ngFor="let lang of langs" [value]="lang">
+          {{ lang }}
+        </option>
+      </select>
+    </label>
+  </div>
+  
+  
+  <router-outlet></router-outlet>
+  
